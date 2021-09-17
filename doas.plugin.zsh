@@ -2,7 +2,7 @@
 # Description
 # -----------
 #
-# doas or will be inserted before the command
+# doas will be inserted before the command
 #
 # ------------------------------------------------------------------------------
 # Authors
