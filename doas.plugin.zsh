@@ -25,8 +25,22 @@ __doas-replace-buffer() {
 }
 
 doas-command-line() {
-  __doas-replace-buffer "doas" ""
-  
+  # If line is empty, get the last run command from history
+  [[ -z $BUFFER ]] && LBUFFER="$(fc -ln -1)" 
+
+  # Save beginning space
+  local WHITESPACE=""
+  if [[ ${LBUFFER:0:1} = " " ]]; then
+    WHITESPACE=" "
+    LBUFFER="${LBUFFER:1}"
+  fi
+
+  # Toggle doas prefix on/off
+  case "$BUFFER" in
+      doas\ *) __doas-replace-buffer "doas" "" ;;
+      *) LBUFFER="doas $LBUFFER" ;;
+  esac
+
   # Preserve beginning space
   LBUFFER="${WHITESPACE}${LBUFFER}"
 
