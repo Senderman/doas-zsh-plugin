@@ -2,6 +2,8 @@
 
 Easily prefix your current or previous commands with `doas` by pressing <kbd>esc</kbd> twice
 
+This is fork of [OMZ's sudo plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo).
+
 # Installation
 
 Use [Antibody](https://getantibody.github.io)
