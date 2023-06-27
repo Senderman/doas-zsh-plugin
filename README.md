@@ -6,7 +6,7 @@ This is fork of [OMZ's sudo plugin](https://github.com/ohmyzsh/ohmyzsh/tree/mast
 
 # Installation
 
-Use [Antibody](https://getantibody.github.io)
+Use [Antidote](https://getantidote.github.io/)
 
 Add the following line to your plugins file:
 
