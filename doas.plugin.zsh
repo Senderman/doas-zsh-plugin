@@ -42,7 +42,7 @@ doas-command-line() {
   # Toggle doas prefix on/off
   case "$BUFFER" in
       "${SUDOBIN}"\ *) __doas-replace-buffer "${SUDOBIN}" "" ;;
-      *) LBUFFER="doas $LBUFFER" ;;
+      *) LBUFFER="${SUDOBIN} $LBUFFER" ;;
   esac
 
   # Preserve beginning space
