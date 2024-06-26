@@ -14,6 +14,10 @@
 # * Fyodor Doletov <github.com/Senderman> (doas fork)
 # ------------------------------------------------------------------------------
 
+if [ -z "${SUDOBIN}" ]; then
+  SUDOBIN="doas"
+fi
+
 __doas-replace-buffer() {
   local old=$1 new=$2 space=${2:+ }
   if [[ ${#LBUFFER} -le ${#old} ]]; then
@@ -37,7 +41,7 @@ doas-command-line() {
 
   # Toggle doas prefix on/off
   case "$BUFFER" in
-      doas\ *) __doas-replace-buffer "doas" "" ;;
+      "${SUDOBIN}"\ *) __doas-replace-buffer "${SUDOBIN}" "" ;;
       *) LBUFFER="doas $LBUFFER" ;;
   esac
 
@@ -54,3 +58,4 @@ zle -N doas-command-line
 bindkey -M emacs '\e\e' doas-command-line
 bindkey -M vicmd '\e\e' doas-command-line
 bindkey -M viins '\e\e' doas-command-line
+

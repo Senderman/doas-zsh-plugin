@@ -12,6 +12,14 @@ Add the following line to your plugins file:
 
 ```Senderman/doas-zsh-plugin```
 
+## Configuration
+
+By default, this plugin uses to add/remove `doas` command. If you need different command (e.g. `sudo`), set this command in SUDOBIN environment variable, e.g.
+
+```bash
+export SUDOBIN=sudo
+```
+
 ## Usage
 
 ### Current typed commands
