@@ -1,18 +1,28 @@
 # doas-zsh-plugin 
 
-Easily prefix your current or previous commands with `doas` by pressing <kbd>esc</kbd> twice
+Easily prefix your current or previous commands with `doas` (or other privilege escalation tool) by pressing <kbd>esc</kbd> twice
 
 This is fork of [OMZ's sudo plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo).
 
 # Installation
 
-Use [Antidote](https://getantidote.github.io/)
+## Plain zsh
+
+Clone this repository to any location on your PC, then add to your `.zshrc`:
+
+```bash
+source /path/to/repo/doas-zsh-plugin.plugin.zsh
+```
+
+## With [Antidote](https://getantidote.github.io/)
 
 Add the following line to your plugins file:
 
-```Senderman/doas-zsh-plugin```
+```
+Senderman/doas-zsh-plugin
+```
 
-## Configuration
+# Configuration
 
 By default, this plugin uses to add/remove `doas` command. If you need different command (e.g. `sudo`), set this command in SUDOBIN environment variable, e.g.
 
@@ -20,9 +30,9 @@ By default, this plugin uses to add/remove `doas` command. If you need different
 export SUDOBIN=sudo
 ```
 
-## Usage
+# Usage
 
-### Current typed commands
+## Current typed commands
 
 Say you have typed a long command and forgot to add `doas` in front:
 
@@ -36,7 +46,7 @@ By pressing the <kbd>esc</kbd> key twice, you will have the same command with `d
 $ doas apt-get install build-essential
 ```
 
-### Previous executed commands
+## Previous executed commands
 
 Say you want to delete a system file and denied:
 
@@ -56,7 +66,7 @@ Password:
 $
 ```
 
-### doas is already in the beginning of the line
+## doas is already in the beginning of the line
 
 Say you already have doas in the beginning of the line:
 
