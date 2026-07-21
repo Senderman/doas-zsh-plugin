@@ -40,30 +40,28 @@ Say you have typed a long command and forgot to add `doas` in front:
 $ apt-get install build-essential
 ```
 
-By pressing the <kbd>esc</kbd> key twice, you will have the same command with `doas` prefixed without typing:
+By pressing the <kbd>esc</kbd> key twice, you will have the same command with `doas` prefixed:
 
 ```console
 $ doas apt-get install build-essential
 ```
 
-## Previous executed commands
+## Previously executed commands
 
-Say you want to delete a system file and denied:
+Say you wanted to see the contents of a system file:
 
 ```console
-$ rm some-system-file.txt
--su: some-system-file.txt: Permission denied
-$
+$ cat some-system-file.txt
+cat: some-system-file.txt: Permission denied
 ```
 
-By pressing the <kbd>esc</kbd> key twice, you will have the same command with `doas` prefixed without typing:
+By pressing the <kbd>esc</kbd> key twice, you will have the latest command from the history with `doas` prefixed:
 
 ```console
-$ rm some-system-file.txt
--su: some-system-file.txt: Permission denied
-$ doas rm some-system-file.txt
-Password:
-$
+$ cat some-system-file.txt
+cat: some-system-file.txt: Permission denied
+# press ESC twice
+$ doas cat some-system-file.txt
 ```
 
 ## doas is already in the beginning of the line
@@ -79,3 +77,4 @@ To remove it, press <kbd>esc</kbd> key twice:
 ```console
 $ ls
 ```
+
