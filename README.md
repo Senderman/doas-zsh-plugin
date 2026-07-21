@@ -32,9 +32,9 @@ export SUDOBIN=sudo
 
 # Usage
 
-## Current typed commands
+## Currently typed commands
 
-Say you have typed a long command and forgot to add `doas` in front:
+Say you have typed a long command and forgot to add `doas` in the beginning:
 
 ```console
 $ apt-get install build-essential
