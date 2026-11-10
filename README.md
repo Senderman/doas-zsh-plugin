@@ -24,10 +24,10 @@ Senderman/doas-zsh-plugin
 
 # Configuration
 
-By default, this plugin uses to add/remove `doas` command. If you need different command (e.g. `sudo`), set this command in SUDOBIN environment variable, e.g.
+By default, this plugin adds/removes the `doas` command. If the `doas` executable is not present on the user's PATH, it will fallback to `sudo`. If you need different command (e.g. `su`), set this command in `SUDOBIN` environment variable, e.g.
 
 ```bash
-export SUDOBIN=sudo
+export SUDOBIN=su
 ```
 
 # Usage

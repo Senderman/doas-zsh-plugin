@@ -15,7 +15,11 @@
 # ------------------------------------------------------------------------------
 
 if [ -z "${SUDOBIN}" ]; then
-  SUDOBIN="doas"
+  if command -v doas > /dev/null; then
+      SUDOBIN="doas"
+  elif command -v sudo > /dev/null; then
+      SUDOBIN="sudo"
+  fi
 fi
 
 __doas-replace-buffer() {
