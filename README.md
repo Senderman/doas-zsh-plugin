@@ -1,6 +1,6 @@
 # doas-zsh-plugin 
 
-Easily prefix your current or previous commands with `doas` (or other privilege escalation tool) by pressing <kbd>esc</kbd> twice
+Easily prefix your current or previous commands with `doas` (or any other privilege escalation tool) by pressing <kbd>esc</kbd> twice
 
 This is fork of [OMZ's sudo plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo).
 
@@ -77,4 +77,18 @@ To remove it, press <kbd>esc</kbd> key twice:
 ```console
 $ ls
 ```
+
+## Key binding
+
+By default, this plugin uses <kbd>Esc</kbd><kbd>Esc</kbd> as the trigger.
+If you want to change it, you can use the `bindkey` command to bind it to a different key:
+
+```sh
+bindkey -M emacs '<seq>' doas-command-line
+bindkey -M vicmd '<seq>' doas-command-line
+bindkey -M viins '<seq>' doas-command-line
+```
+
+where `<seq>` is the sequence you want to use. You can find the keyboard sequence
+by running `cat` and pressing the keyboard combination you want to use.
 
